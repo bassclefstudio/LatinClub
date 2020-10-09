@@ -46,5 +46,8 @@
   <ItemGroup>
     <Folder Include="Assets\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BassClefStudio.LatinClub.Core\BassClefStudio.LatinClub.Core.csproj" />
+  </ItemGroup>
   <Import Project="..\BassClefStudio.LatinClub.Uno.Shared\BassClefStudio.LatinClub.Uno.Shared.projitems" Label="Shared" Condition="Exists('..\BassClefStudio.LatinClub.Uno.Shared\BassClefStudio.LatinClub.Uno.Shared.projitems')" />
 </Project>

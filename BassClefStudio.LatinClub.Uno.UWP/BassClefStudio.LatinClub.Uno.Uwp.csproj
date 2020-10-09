@@ -148,6 +148,12 @@
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BassClefStudio.LatinClub.Core\BassClefStudio.LatinClub.Core.csproj">
+      <Project>{8f3e21f8-78e8-47da-b471-2b15549e1145}</Project>
+      <Name>BassClefStudio.LatinClub.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\BassClefStudio.LatinClub.Uno.Shared\BassClefStudio.LatinClub.Uno.Shared.projitems" Label="Shared" Condition="Exists('..\BassClefStudio.LatinClub.Uno.Shared\BassClefStudio.LatinClub.Uno.Shared.projitems')" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
