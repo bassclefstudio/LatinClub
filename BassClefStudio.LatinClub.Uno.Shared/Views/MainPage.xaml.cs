@@ -13,6 +13,8 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using BassClefStudio.LatinClub.Uno.ViewModels;
+using Windows.ApplicationModel.Core;
+using Windows.UI.ViewManagement;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,6 +30,12 @@ namespace BassClefStudio.LatinClub.Uno
         public MainPage()
         {
             ViewModel = new MainViewModel();
+
+            var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            Windows.UI.Color titleColor = (Windows.UI.Color)Resources["SystemChromeMediumColor"];
+            titleBar.BackgroundColor = titleColor;
+            titleBar.ButtonBackgroundColor = titleColor;
+
             this.InitializeComponent();
         }
     }
