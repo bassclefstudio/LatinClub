@@ -10,25 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        # Checkout the code
         - uses: actions/checkout@v2
-
-        # Install .NET Core SDK
         - name: Setup .NET Core
           uses: actions/setup-dotnet@v1
           with:
             dotnet-version: 3.1.x
 
-        # Run tests
-        - name: Test
-          run: dotnet test
-
-        # Generate the website
+        - name: Add GitHub Packages to Nuget
+          run: dotnet nuget add source https://nuget.pkg.github.com/bassclefstudio/index.json --name "GPR" --username bassclefstudio --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
+        - name: Install dependencies
+          run: dotnet restore
         - name: Publish
-          run: dotnet publish BassClefStudio.LatinClub.Uno.Wasm/BassClefStudio.LatinClub.Uno.Wasm.csproj --configuration Release
-
-        # Publish the website
-        - name: GitHub Pages action
+          run: dotnet publish BassClefStudio.LatinClub.Uno.Wasm/BassClefStudio.LatinClub.Uno.Wasm.csproj --configuration Release --no-restore
+        - name: Add to GitHub Pages
           uses: peaceiris/actions-gh-pages@v3.6.1
           with:
             github_token: ${{ secrets.PUBLISH_TOKEN }}
@@ -37,5 +31,5 @@ jobs:
             allow_empty_commit: false
             keep_files: false
             force_orphan: true
-            # TODO uncomment the following line if you have a custom domain name
-            # cname: demo.meziantou.net
+            # Uncomment the following line if you have a custom domain name:
+            # cname: mywebsite.net
