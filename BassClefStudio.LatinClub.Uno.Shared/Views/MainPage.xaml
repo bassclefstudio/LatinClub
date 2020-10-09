@@ -1,0 +1,23 @@
+<Page
+    x:Class="BassClefStudio.LatinClub.Uno.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BassClefStudio.LatinClub.Uno"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel
+        Background="{ThemeResource SystemChromeMediumColor}">
+        <TextBox 
+            Margin="20"
+            Text="{x:Bind ViewModel.TextIn, Mode=TwoWay}"/>
+        <TextBlock 
+            Margin="20"
+            Style="{StaticResource TitleTextBlockStyle}"
+            Text="{x:Bind ViewModel.TextOut, Mode=OneWay}"/>
+        <Button 
+            Content="This is a test"
+            HorizontalAlignment="Center"
+            Command="{x:Bind ViewModel.SetCommand}"/>
+    </StackPanel>
+</Page>
