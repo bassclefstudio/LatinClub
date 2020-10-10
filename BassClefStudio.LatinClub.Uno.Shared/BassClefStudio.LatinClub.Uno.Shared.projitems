@@ -18,6 +18,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ArticleLink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ClubContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\EventLink.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DispatcherService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\EqualityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RelayCommands.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BassClefStudio.NET.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +8,7 @@ namespace BassClefStudio.LatinClub.Core.News
     /// <summary>
     /// Represents a club news article.
     /// </summary>
-    public class Article
+    public class Article : IIdentifiable<int>
     {
         /// <summary>
         /// Primary key for this <see cref="Article"/>.

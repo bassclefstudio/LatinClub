@@ -8,13 +8,10 @@
     mc:Ignorable="d">
     <Grid Background="{ThemeResource SystemChromeMediumColor}">
         <StackPanel>
-            <TextBox 
-                Margin="20"
-                Text="{x:Bind ViewModel.TextIn, Mode=TwoWay}"/>
             <TextBlock 
                 Margin="20"
                 Style="{StaticResource TitleTextBlockStyle}"
-                Text="{x:Bind ViewModel.TextOut, Mode=OneWay}"/>
+                Text="{x:Bind ViewModel.Context.Events.Item.Count, Mode=OneWay}"/>
             <Button 
                 Content="This is a test"
                 HorizontalAlignment="Center"

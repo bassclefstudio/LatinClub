@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BassClefStudio.NET.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +8,7 @@ namespace BassClefStudio.LatinClub.Core.Events
     /// <summary>
     /// Represents an activity, meeting, or other event that could be present on a calendar.
     /// </summary>
-    public class ClubEvent
+    public class ClubEvent : IIdentifiable<int>
     {
         /// <summary>
         /// Primary key for this <see cref="ClubEvent"/>.

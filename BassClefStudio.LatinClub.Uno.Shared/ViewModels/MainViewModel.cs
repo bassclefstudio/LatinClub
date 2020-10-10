@@ -8,27 +8,27 @@ using System.Windows.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using BassClefStudio.LatinClub.Uno.Data;
+using System.Threading.Tasks;
 
 namespace BassClefStudio.LatinClub.Uno.ViewModels
 {
     public class MainViewModel : Observable
     {
-        private string textOut;
-        public string TextOut { get => textOut; set => Set(ref textOut, value); }
-
-        private string textIn;
-        public string TextIn { get => textIn; set => Set(ref textIn, value); }
+        private ClubContext context;
+        public ClubContext Context { get => context; set => Set(ref context, value); }
 
         public MainViewModel()
         {
+            Context = new ClubContext();
             SetCommand = new RelayCommandBuilder(Set).Command;
         }
 
         public ICommand SetCommand { get; }
 
-        public void Set()
+        public async Task Set()
         {
-            TextOut = TextIn;
+            await Context.InitializeAsync();
         }
     }
 }
