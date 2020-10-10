@@ -1,6 +1,7 @@
 ﻿using BassClefStudio.NET.Core;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 
 namespace BassClefStudio.LatinClub.Core.Events
@@ -8,32 +9,36 @@ namespace BassClefStudio.LatinClub.Core.Events
     /// <summary>
     /// Represents an activity, meeting, or other event that could be present on a calendar.
     /// </summary>
-    public class ClubEvent : IIdentifiable<int>
+    public class ClubEvent : Observable, IIdentifiable<int>
     {
         /// <summary>
         /// Primary key for this <see cref="ClubEvent"/>.
         /// </summary>
         public int Id { get; set; }
 
+        private DateTimeOffset startTime;
         /// <summary>
         /// A <see cref="DateTimeOffset"/> representing the date and time when the <see cref="ClubEvent"/> occurs.
         /// </summary>
-        public DateTimeOffset StartTime { get; set; }
+        public DateTimeOffset StartTime { get => startTime; set => Set(ref startTime, value); }
 
+        private string name;
         /// <summary>
         /// The name of the <see cref="ClubEvent"/>.
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get => name; set => Set(ref name, value); }
 
+        private string description;
         /// <summary>
         /// Additional information about the <see cref="ClubEvent"/>.
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get => description; set => Set(ref description, value); }
 
+        private EventType type;
         /// <summary>
         /// An <see cref="EventType"/> describing the function of this <see cref="ClubEvent"/>.
         /// </summary>
-        public EventType Type { get; set; }
+        public EventType Type { get => type; set => Set(ref type, value); }
     }
 
     /// <summary>

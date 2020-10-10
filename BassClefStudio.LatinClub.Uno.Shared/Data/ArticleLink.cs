@@ -56,8 +56,27 @@ namespace BassClefStudio.LatinClub.Uno.Data
         }
     }
 
-    public class ArticleSyncCollection : SyncCollection<Article, int>
+    /// <inheritdoc/>
+    public class ArticleSyncItem : KeyedSyncItem<Article, int>
     {
+        /// <inheritdoc/>
+        public ArticleSyncItem(Article item, ILink<Article> link = null) : base(item, link)
+        { }
+
+        /// <inheritdoc/>
+        public ArticleSyncItem(ILink<Article> link = null) : base(link)
+        { }
+    }
+
+    /// <inheritdoc/>
+    public class ArticleSyncCollection : SyncCollection<ArticleSyncItem, Article, int>
+    {
+        /// <inheritdoc/>
+        protected override ArticleSyncItem CreateSyncItem(ILink<Article> link)
+        {
+            return new ArticleSyncItem(link);
+        }
+
         /// <inheritdoc/>
         protected override async Task<ISyncCollectionInfo<Article, int>> GetCollectionInfo()
         {

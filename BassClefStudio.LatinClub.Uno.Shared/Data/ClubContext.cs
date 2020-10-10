@@ -15,22 +15,13 @@ namespace BassClefStudio.LatinClub.Uno.Data
     {
         public const string ApiUrl = "http://localhost:59525/api";
 
-        public ISyncCollection<IKeyedSyncItem<ClubEvent, int>> Events { get; }
-        public ISyncCollection<IKeyedSyncItem<Article, int>> Articles { get; }
+        public ISyncCollection<EventSyncItem> Events { get; }
+        public ISyncCollection<ArticleSyncItem> Articles { get; }
 
         public ClubContext()
         {
             Events = new EventSyncCollection();
             Articles = new ArticleSyncCollection();
-        }
-
-        public async Task InitializeAsync()
-        {
-            await new Task[]
-            {
-                Events.UpdateAsync(),
-                Articles.UpdateAsync()
-            }.RunParallelAsync();
         }
     }
 }

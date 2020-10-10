@@ -56,14 +56,33 @@ namespace BassClefStudio.LatinClub.Uno.Data
         }
     }
 
-    public class EventSyncCollection : SyncCollection<ClubEvent, int>
+    /// <inheritdoc/>
+    public class EventSyncItem : KeyedSyncItem<ClubEvent, int>
     {
+        /// <inheritdoc/>
+        public EventSyncItem(ClubEvent item, ILink<ClubEvent> link = null) : base(item, link)
+        { }
+
+        /// <inheritdoc/>
+        public EventSyncItem(ILink<ClubEvent> link = null) : base(link)
+        { }
+    }
+
+    /// <inheritdoc/>
+    public class EventSyncCollection : SyncCollection<EventSyncItem, ClubEvent, int>
+    {
+        /// <inheritdoc/>
+        protected override EventSyncItem CreateSyncItem(ILink<ClubEvent> link)
+        {
+            return new EventSyncItem(link);
+        }
+
         /// <inheritdoc/>
         protected override async Task<ISyncCollectionInfo<ClubEvent, int>> GetCollectionInfo()
         {
             using (var service = new ApiService())
             {
-                var events = await service.GetAsync<IEnumerable<ClubEvent>>($"{ClubContext.ApiUrl}/events");
+                var events = await service.GetAsync<ClubEvent[]>($"{ClubContext.ApiUrl}/events");
                 // Actually include some of the data here at this point.
                 return new EventSyncCollectionInfo(events);
             }
