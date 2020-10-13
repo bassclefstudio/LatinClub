@@ -19,7 +19,9 @@ namespace BassClefStudio.LatinClub.Uno
         /// </summary>
         public App()
         {
+#if NETFX_CORE
             this.InitializeComponent();
+#endif
             this.Suspending += OnSuspending;
         }
 

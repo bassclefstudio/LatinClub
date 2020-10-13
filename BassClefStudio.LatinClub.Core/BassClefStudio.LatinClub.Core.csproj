@@ -4,4 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="BassClefStudio.NET.Core" Version="1.4.0" />
+    <PackageReference Include="BassClefStudio.NET.Sync" Version="1.4.4" />
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+
 </Project>
