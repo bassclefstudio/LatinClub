@@ -10,6 +10,9 @@ using System.Collections.Generic;
 using System.Text;
 using BassClefStudio.LatinClub.Uno.Data;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using Microsoft.Toolkit.Uwp.UI;
+
 namespace BassClefStudio.LatinClub.Uno.ViewModels
 {
     public class MainViewModel : Observable
@@ -17,12 +20,12 @@ namespace BassClefStudio.LatinClub.Uno.ViewModels
         private ClubContext context;
         public ClubContext Context { get => context; set => Set(ref context, value); }
 
-        //public AdvancedCollectionView EventsView { get; }
+        public AdvancedCollectionView EventsView { get; }
 
         public MainViewModel()
         {
             Context = new ClubContext();
-            //EventsView = new AdvancedCollectionView(Context.Events.Item);
+            EventsView = new AdvancedCollectionView(Context.Events.Item);
             SetCommand = new RelayCommandBuilder(Set).Command;
         }
 
@@ -30,7 +33,16 @@ namespace BassClefStudio.LatinClub.Uno.ViewModels
 
         public async Task Set()
         {
-            await Context.Events.UpdateAsync();
+            Debug.WriteLine("Updating values...");
+            try
+            {
+                await Context.Events.UpdateAsync();
+                Debug.WriteLine($"Found {Context.Events.Item.Count} items.");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Exception thrown: {ex}");
+            }
         }
     }
 }
