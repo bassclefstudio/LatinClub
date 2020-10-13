@@ -34,8 +34,15 @@ namespace BassClefStudio.LatinClub.Uno.ViewModels
         public async Task Set()
         {
             Debug.WriteLine("Updating values...");
-            await Context.Events.UpdateAsync();
-            Debug.WriteLine($"Found {Context.Events.Item.Count} items.");
+            try
+            {
+                await Context.Events.UpdateAsync();
+                Debug.WriteLine($"Found {Context.Events.Item.Count} items.");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Exception thrown: {ex}");
+            }
         }
     }
 }

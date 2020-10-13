@@ -1,5 +1,6 @@
 <linker>
-  <assembly fullname="BassClefStudio.LatinClub.Uno.Wasm" />
+  <assembly fullname="BassClefStudio.LatinClub.Core"/>
+  <assembly fullname="BassClefStudio.LatinClub.Uno.Wasm"/>
   <assembly fullname="Uno.UI" />
 
   <assembly fullname="System.Core">
