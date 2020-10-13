@@ -85,7 +85,7 @@ namespace BassClefStudio.LatinClub.Uno.Data
             Debug.WriteLine("Getting collection info...");
             using (var service = new ApiService())
             {
-                var articles = await service.GetAsync<IEnumerable<Article>>($"{ClubContext.ApiUrl}/articles");
+                var articles = await service.GetAsync<Article[]>($"{ClubContext.ApiUrl}/articles");
                 Debug.WriteLine($"Retrieved {articles.Length} articles in collection info.");
                 return new ArticleSyncCollectionInfo(articles);
             }
