@@ -8,9 +8,10 @@
     xmlns:data="using:BassClefStudio.LatinClub.Uno.Data" 
     mc:Ignorable="d">
     <Grid
-        Background="{ThemeResource SystemChromeMediumColor}">
+        Background="{ThemeResource SystemChromeMediumLowColor}">
         <StackPanel>
-            <Button 
+            <Button
+                Margin="8"
                 Content="This is a test"
                 HorizontalAlignment="Center"
                 Command="{x:Bind ViewModel.SetCommand}"/>

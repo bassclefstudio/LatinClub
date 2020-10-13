@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Text;
 using BassClefStudio.LatinClub.Uno.Data;
 using System.Threading.Tasks;
+using System.Diagnostics;
+
 namespace BassClefStudio.LatinClub.Uno.ViewModels
 {
     public class MainViewModel : Observable
@@ -30,7 +32,9 @@ namespace BassClefStudio.LatinClub.Uno.ViewModels
 
         public async Task Set()
         {
+            Debug.WriteLine("Updating values.");
             await Context.Events.UpdateAsync();
+            Debug.WriteLine($"Found {Context.Events.Item.Count} items.");
         }
     }
 }
