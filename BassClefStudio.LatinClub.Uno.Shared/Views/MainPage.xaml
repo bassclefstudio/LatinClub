@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:BassClefStudio.LatinClub.Uno.Data" 
     mc:Ignorable="d">
-    <Grid 
+    <Grid
         Background="{ThemeResource SystemChromeMediumColor}">
         <StackPanel>
             <Button 
@@ -15,7 +15,7 @@
                 HorizontalAlignment="Center"
                 Command="{x:Bind ViewModel.SetCommand}"/>
             <ListView
-                ItemsSource="{x:Bind ViewModel.EventsView, Mode=OneWay}">
+                ItemsSource="{x:Bind ViewModel.Context.Events.Item, Mode=OneWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:EventSyncItem">
                         <Grid>
