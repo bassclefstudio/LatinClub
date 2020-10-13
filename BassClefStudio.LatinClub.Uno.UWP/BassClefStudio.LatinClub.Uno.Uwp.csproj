@@ -28,9 +28,6 @@
     <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI">
       <Version>6.1.0-build.191.gc988bdd4ff</Version>
     </PackageReference>
-    <PackageReference Include="Uno.SourceGenerationTasks">
-      <Version>3.0.0-dev.14</Version>
-    </PackageReference>
   </ItemGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>

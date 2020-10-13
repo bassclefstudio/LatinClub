@@ -4,7 +4,6 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
     <NoWarn>NU1701</NoWarn>
-    <IntermediateOutputPath>C:\temp\build\</IntermediateOutputPath>
     <Version>1.0.1</Version>
     <Authors>BassClefStudio</Authors>
     <Company>BassClefStudio</Company>
@@ -44,7 +43,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
     <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI" Version="6.1.0-build.191.gc988bdd4ff" />
-    <PackageReference Include="Uno.SourceGenerationTasks" Version="3.0.0-dev.14" />
     <PackageReference Include="Uno.WinUI" Version="3.1.0-dev.739" />
     <PackageReference Include="Uno.WinUI.WebAssembly" Version="3.1.0-dev.739" />
     <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.1.0-dev.739" Condition="'$(Configuration)'=='Debug'" />
