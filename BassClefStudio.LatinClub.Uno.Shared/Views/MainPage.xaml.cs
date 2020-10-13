@@ -35,9 +35,7 @@ namespace BassClefStudio.LatinClub.Uno
             Windows.UI.Color titleColor = (Windows.UI.Color)Resources["SystemChromeMediumColor"];
             titleBar.BackgroundColor = titleColor;
             titleBar.ButtonBackgroundColor = titleColor;
-#if NETFX_CORE
             this.InitializeComponent();
-#endif
         }
     }
 }

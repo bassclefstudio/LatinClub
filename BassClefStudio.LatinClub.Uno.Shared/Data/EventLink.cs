@@ -4,6 +4,7 @@ using BassClefStudio.NET.Core;
 using BassClefStudio.NET.Sync;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,16 +75,19 @@ namespace BassClefStudio.LatinClub.Uno.Data
         /// <inheritdoc/>
         protected override EventSyncItem CreateSyncItem(ILink<ClubEvent> link)
         {
+            Debug.WriteLine("Creating SyncItem...");
             return new EventSyncItem(link);
         }
 
         /// <inheritdoc/>
         protected override async Task<ISyncCollectionInfo<ClubEvent, int>> GetCollectionInfo()
         {
+            Debug.WriteLine("Getting collection info...");
             using (var service = new ApiService())
             {
                 var events = await service.GetAsync<ClubEvent[]>($"{ClubContext.ApiUrl}/events");
                 // Actually include some of the data here at this point.
+                Debug.WriteLine($"Retrieved {events.Length} events in collection info.");
                 return new EventSyncCollectionInfo(events);
             }
         }

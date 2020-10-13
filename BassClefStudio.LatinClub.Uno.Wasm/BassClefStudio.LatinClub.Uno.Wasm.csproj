@@ -4,9 +4,6 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
     <NoWarn>NU1701</NoWarn>
-    <Version>1.0.1</Version>
-    <Authors>BassClefStudio</Authors>
-    <Company>BassClefStudio</Company>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <MonoRuntimeDebuggerEnabled>true</MonoRuntimeDebuggerEnabled>
@@ -42,12 +39,11 @@
     <PackageReference Include="BassClefStudio.NET.Sync" Version="1.4.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI" Version="6.1.0-build.191.gc988bdd4ff" />
-    <PackageReference Include="Uno.WinUI" Version="3.1.0-dev.739" />
-    <PackageReference Include="Uno.WinUI.WebAssembly" Version="3.1.0-dev.739" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.1.0-dev.739" Condition="'$(Configuration)'=='Debug'" />
-    <PackageReference Include="Uno.Wasm.Bootstrap" Version="1.5.0-dev.57" />
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.5.0-dev.57" />
+    <PackageReference Include="Uno.WinUI" Version="3.1.0-dev.747" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.1.0-dev.747" />
+    <PackageReference Include="Uno.WinUI.WebAssembly" Version="3.1.0-dev.747" />
+    <PackageReference Include="Uno.Wasm.Bootstrap" Version="1.5.0-dev.57" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />

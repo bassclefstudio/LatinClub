@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using BassClefStudio.LatinClub.Uno.Data;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using Microsoft.Toolkit.Uwp.UI;
 
 namespace BassClefStudio.LatinClub.Uno.ViewModels
@@ -32,7 +33,16 @@ namespace BassClefStudio.LatinClub.Uno.ViewModels
 
         public async Task Set()
         {
-            await Context.Events.UpdateAsync();
+            Debug.WriteLine("Updating values...");
+            try
+            {
+                await Context.Events.UpdateAsync();
+                Debug.WriteLine($"Found {Context.Events.Item.Count} items.");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Exception thrown: {ex}");
+            }
         }
     }
 }
