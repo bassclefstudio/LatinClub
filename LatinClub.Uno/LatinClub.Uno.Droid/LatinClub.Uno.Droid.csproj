@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>928f6cc9-cd69-476a-be23-39ec323aa160</ProjectGuid>
+    <ProjectGuid>{928F6CC9-CD69-476A-BE23-39EC323AA160}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -87,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LatinClub.Core\LatinClub.Core.csproj">
+      <Project>{ae624ad6-8253-4179-aea3-ff6b3d063968}</Project>
+      <Name>LatinClub.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems" Label="Shared" Condition="Exists('..\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

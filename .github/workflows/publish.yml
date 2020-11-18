@@ -3,7 +3,7 @@ name: Publish WebAssembly
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
         - name: Install dependencies
           run: dotnet restore
         - name: Publish
-          run: dotnet publish BassClefStudio.LatinClub.Uno.Wasm/BassClefStudio.LatinClub.Uno.Wasm.csproj --configuration Release --no-restore
+          run: dotnet publish LatinClub.Uno/LatinClub.Uno.Wasm/LatinClub.Uno.Wasm.csproj --configuration Release --no-restore
         - name: Add to GitHub Pages
           uses: peaceiris/actions-gh-pages@v3.6.1
           with:

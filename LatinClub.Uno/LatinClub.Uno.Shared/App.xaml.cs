@@ -2,9 +2,9 @@ using Microsoft.Extensions.Logging;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Navigation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace BassClefStudio.LatinClub.Uno
 {
@@ -30,7 +30,7 @@ namespace BassClefStudio.LatinClub.Uno
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs e)
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -38,7 +38,7 @@ namespace BassClefStudio.LatinClub.Uno
                 // this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            Frame rootFrame = Microsoft.UI.Xaml.Window.Current.Content as Frame;
+            Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -49,16 +49,16 @@ namespace BassClefStudio.LatinClub.Uno
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.UWPLaunchActivatedEventArgs.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }
 
                 // Place the frame in the current Window
-                Microsoft.UI.Xaml.Window.Current.Content = rootFrame;
+                Window.Current.Content = rootFrame;
             }
 
-            if (e.UWPLaunchActivatedEventArgs.PrelaunchActivated == false)
+            if (e.PrelaunchActivated == false)
             {
                 if (rootFrame.Content == null)
                 {
@@ -68,7 +68,7 @@ namespace BassClefStudio.LatinClub.Uno
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // Ensure the current window is active
-                Microsoft.UI.Xaml.Window.Current.Activate();
+                Window.Current.Activate();
             }
         }
 

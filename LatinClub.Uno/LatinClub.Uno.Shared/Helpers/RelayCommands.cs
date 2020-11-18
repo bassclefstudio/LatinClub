@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if NETFX_CORE
-using Microsoft.UI.Xaml.Input;
-#else
 using System.Windows.Input;
-#endif
 
 namespace BassClefStudio.LatinClub.Uno.Helpers
 {
@@ -118,17 +114,10 @@ namespace BassClefStudio.LatinClub.Uno.Helpers
 
         private readonly Func<bool> _canExecute;
 
-#if NETFX_CORE
-        /// <summary>
-        /// An event that is fired when the <see cref="RelayCommand"/>'s ability to execute has changed.
-        /// </summary>
-        public event EventHandler<object> CanExecuteChanged;
-#else
         /// <summary>
         /// An event that is fired when the <see cref="RelayCommand"/>'s ability to execute has changed.
         /// </summary>
         public event EventHandler CanExecuteChanged;
-#endif
 
         /// <summary>
         /// Creates a basic <see cref="RelayCommand"/> with no conditional.
@@ -176,17 +165,10 @@ namespace BassClefStudio.LatinClub.Uno.Helpers
 
         private readonly Func<T, bool> _canExecute;
 
-#if NETFX_CORE
-        /// <summary>
-        /// An event that is fired when the <see cref="RelayCommand"/>'s ability to execute has changed.
-        /// </summary>
-        public event EventHandler<object> CanExecuteChanged;
-#else
         /// <summary>
         /// An event that is fired when the <see cref="RelayCommand"/>'s ability to execute has changed.
         /// </summary>
         public event EventHandler CanExecuteChanged;
-#endif
 
         /// <summary>
         /// Creates a basic <see cref="RelayCommand{T}"/> with no conditional.

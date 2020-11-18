@@ -14,9 +14,10 @@
                 Margin="8"
                 Content="This is a test"
                 HorizontalAlignment="Center"
-                Command="{x:Bind ViewModel.SetCommand}"/>
+                Command="{Binding SetCommand}"/>
             <ListView
-                ItemsSource="{x:Bind ViewModel.EventsView, Mode=OneWay}">
+                ItemsSource="{Binding EventsView, Mode=OneWay}"
+                Height="200">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:EventSyncItem">
                         <Grid>

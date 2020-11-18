@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation.Collections;
-using Microsoft.UI.Xaml.Data;
+using Windows.UI.Xaml.Data;
 
 namespace Microsoft.Toolkit.Uwp.UI
 {

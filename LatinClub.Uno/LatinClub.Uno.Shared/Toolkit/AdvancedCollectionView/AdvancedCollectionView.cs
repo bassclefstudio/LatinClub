@@ -7,14 +7,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-//using System.ComponentModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Microsoft.Toolkit.Uwp.Helpers;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Microsoft.UI.Xaml.Data;
+using Windows.UI.Xaml.Data;
 
 namespace Microsoft.Toolkit.Uwp.UI
 {

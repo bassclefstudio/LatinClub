@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>32e9287f-12e0-43e8-acf8-88a84c6624bd</ProjectGuid>
+    <ProjectGuid>{32E9287F-12E0-43E8-ACF8-88A84C6624BD}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>LatinClub.Uno</RootNamespace>
@@ -149,10 +149,12 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Media" Visible="false" />
-    <Folder Include="Media\AppIcons" Visible="false" />
-    <Folder Include="Media\LaunchImages" Visible="false" />
+    <ProjectReference Include="..\..\LatinClub.Core\LatinClub.Core.csproj">
+      <Project>{ae624ad6-8253-4179-aea3-ff6b3d063968}</Project>
+      <Name>LatinClub.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems" Label="Shared" Condition="Exists('..\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

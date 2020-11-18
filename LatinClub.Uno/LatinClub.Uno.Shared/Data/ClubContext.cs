@@ -15,8 +15,8 @@ namespace BassClefStudio.LatinClub.Uno.Data
     {
         public const string ApiUrl = "http://localhost:59525/api";
 
-        public ISyncCollection<EventSyncItem> Events { get; }
-        public ISyncCollection<ArticleSyncItem> Articles { get; }
+        public SyncCollection<ClubEvent, int> Events { get; }
+        public SyncCollection<Article, int> Articles { get; }
 
         public ClubContext()
         {

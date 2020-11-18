@@ -14,6 +14,7 @@
     <Content Include="Assets\Fonts\uno-fluentui-assets.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\LatinClub.Core\LatinClub.Core.csproj" />
     <ProjectReference Include="..\LatinClub.Uno.Skia.WPF\LatinClub.Uno.Skia.WPF.csproj" />
   </ItemGroup>
 </Project>

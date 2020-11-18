@@ -70,10 +70,10 @@ namespace BassClefStudio.LatinClub.Uno.Data
     }
 
     /// <inheritdoc/>
-    public class ArticleSyncCollection : SyncCollection<ArticleSyncItem, Article, int>
+    public class ArticleSyncCollection : SyncCollection<Article, int>
     {
         /// <inheritdoc/>
-        protected override ArticleSyncItem CreateSyncItem(ILink<Article> link)
+        protected override IKeyedSyncItem<Article, int> CreateSyncItem(ILink<Article> link)
         {
             Debug.WriteLine("Creating SyncItem...");
             return new ArticleSyncItem(link);

@@ -10,6 +10,9 @@
 			-->
       <Version>6.2.9</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.4.3</Version>
+    </PackageReference>
     <PackageReference Include="Uno.Core" Version="2.0.0" />
     <PackageReference Include="Uno.UI" Version="3.3.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
@@ -127,6 +130,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\..\LatinClub.Core\LatinClub.Core.csproj">
+      <Project>{ae624ad6-8253-4179-aea3-ff6b3d063968}</Project>
+      <Name>LatinClub.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

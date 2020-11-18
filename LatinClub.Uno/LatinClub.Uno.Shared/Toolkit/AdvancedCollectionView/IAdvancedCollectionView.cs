@@ -5,7 +5,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.UI.Xaml.Data;
+using Windows.UI.Xaml.Data;
 
 namespace Microsoft.Toolkit.Uwp.UI
 {

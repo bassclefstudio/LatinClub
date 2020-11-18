@@ -1,10 +1,5 @@
 ﻿using BassClefStudio.LatinClub.Uno.Helpers;
 using BassClefStudio.NET.Core;
-#if NETFX_CORE
-using Microsoft.UI.Xaml.Input;
-#else
-using System.Windows.Input;
-#endif
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +7,9 @@ using BassClefStudio.LatinClub.Uno.Data;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Microsoft.Toolkit.Uwp.UI;
+using System.Collections;
+using System.Windows.Input;
+using BassClefStudio.LatinClub.Core.Events;
 
 namespace BassClefStudio.LatinClub.Uno.ViewModels
 {
@@ -25,7 +23,7 @@ namespace BassClefStudio.LatinClub.Uno.ViewModels
         public MainViewModel()
         {
             Context = new ClubContext();
-            EventsView = new AdvancedCollectionView(Context.Events.Item);
+            EventsView = new AdvancedCollectionView(Context.Events.Item as IList);
             SetCommand = new RelayCommandBuilder(Set).Command;
         }
 
@@ -36,7 +34,8 @@ namespace BassClefStudio.LatinClub.Uno.ViewModels
             Debug.WriteLine("Updating values...");
             try
             {
-                await Context.Events.UpdateAsync();
+                //await Context.Events.UpdateAsync();
+                Context.Events.Item.Add(new EventSyncItem(new ClubEvent() { Id = 0, Name = "Hello World!" }));
                 Debug.WriteLine($"Found {Context.Events.Item.Count} items.");
             }
             catch (Exception ex)
