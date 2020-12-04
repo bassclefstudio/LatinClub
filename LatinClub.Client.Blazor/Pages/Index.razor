@@ -1,0 +1,24 @@
+﻿@page "/"
+@using ViewModels
+@inject IBlazorViewProvider ViewProvider
+
+<h1>Hello, world!</h1>
+
+@code
+{
+    public MainViewModel ViewModel { get; set; }
+
+    protected override void OnInitialized()
+    {
+        ViewModel = (ViewProvider.CurrentView as BlazorView<MainViewModel>)?.ViewModel;
+        if(ViewModel != null)
+        {
+            ViewModel.PropertyChanged += ViewModelChanged;
+        }
+    }
+
+    private void ViewModelChanged(object sender, PropertyChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+}
