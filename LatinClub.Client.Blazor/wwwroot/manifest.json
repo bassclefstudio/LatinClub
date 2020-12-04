@@ -1,6 +1,6 @@
 {
-  "name": "LatinClub.Client.Blazor",
-  "short_name": "LatinClub.Client.Blazor",
+  "name": "RHS Latin Club",
+  "short_name": "RHS Latin Club",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#222222",

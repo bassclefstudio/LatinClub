@@ -1,50 +1,46 @@
-﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
-
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+﻿html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 
-a, .btn-link {
-    color: #0366d6;
+h1 {
+    font-weight: 400;
+    font-size: x-large;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+h2 {
+    font-weight: 300;
+    font-size: larger;
 }
 
-.content {
-    padding-top: 1.1rem;
+h3 {
+    font-weight: 300;
+    font-size: large;
 }
 
-.valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
+.flex-container {
+    display: flex;
 }
 
-.invalid {
-    outline: 1px solid red;
+html, body, .full-height {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
-.validation-message {
-    color: red;
+.flex-center-h, .flex-center {
+    justify-content: center;
 }
 
-#blazor-error-ui {
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+.flex-center-v, .flex-center {
+    align-items: center;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+.background-theme {
+    background-color: #222222;
+}
+
+.splash {
+    width: 25%;
+    height: 25%;
+}
