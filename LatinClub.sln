@@ -23,24 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Uno.Skia.Gtk", "L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Uno.Skia.Tizen", "LatinClub.Uno\LatinClub.Uno.Skia.Tizen\LatinClub.Uno.Skia.Tizen.csproj", "{EEC65671-7B48-40F8-8BCF-3567BBEAB6D8}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LatinClub.Uno.Shared", "LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Api", "LatinClub.Api\LatinClub.Api.csproj", "{F94BD5BD-40EA-480F-9C20-97B865645757}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Core", "LatinClub.Core\LatinClub.Core.csproj", "{AE624AD6-8253-4179-AEA3-FF6B3D063968}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{32e9287f-12e0-43e8-acf8-88a84c6624bd}*SharedItemsImports = 4
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{5eff8813-3080-4216-8bf3-7ba69057832f}*SharedItemsImports = 5
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{928f6cc9-cd69-476a-be23-39ec323aa160}*SharedItemsImports = 4
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{b912b2ab-ea33-4327-b554-4d242087200e}*SharedItemsImports = 4
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{d1eaf18c-3432-499d-8862-a81c46e066ec}*SharedItemsImports = 4
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{d27a6638-2183-4ed6-89c6-0abed6e16f47}*SharedItemsImports = 5
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{eec65671-7b48-40f8-8bcf-3567bbeab6d8}*SharedItemsImports = 5
-		LatinClub.Uno\LatinClub.Uno.Shared\LatinClub.Uno.Shared.projitems*{f6faf46a-2322-4c68-99c2-c4c8d8a9bf41}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
