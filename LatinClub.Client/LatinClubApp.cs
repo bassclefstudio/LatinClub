@@ -14,6 +14,7 @@ namespace BassClefStudio.LatinClub.Client
         protected override void ConfigureServices(ContainerBuilder builder)
         {
             builder.RegisterViewModels(typeof(LatinClubApp).Assembly);
+            
         }
     }
 }
