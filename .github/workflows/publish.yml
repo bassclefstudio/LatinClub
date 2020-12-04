@@ -14,20 +14,20 @@ jobs:
         - name: Setup .NET Core
           uses: actions/setup-dotnet@v1
           with:
-            dotnet-version: 3.1.x
+            dotnet-version: latest
 
         - name: Add GitHub Packages to Nuget
           run: dotnet nuget add source https://nuget.pkg.github.com/bassclefstudio/index.json --name "GPR" --username bassclefstudio --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
         - name: Install dependencies
-          run: dotnet restore
+          run: dotnet restore LatinClub.Blazor/LatinClub.Blazor.csproj
         - name: Publish
-          run: dotnet publish LatinClub.Uno/LatinClub.Uno.Wasm/LatinClub.Uno.Wasm.csproj --configuration Release --no-restore
+          run: dotnet publish LatinClub.Blazor/LatinClub.Blazor.csproj --configuration Release --no-restore
         - name: Add to GitHub Pages
           uses: peaceiris/actions-gh-pages@v3.6.1
           with:
             github_token: ${{ secrets.PUBLISH_TOKEN }}
             publish_branch: gh-pages
-            publish_dir: BassClefStudio.LatinClub.Uno.Wasm/bin/Release/netstandard2.0/publish/
+            publish_dir: LatinClub.Blazor/bin/Release/net5.0/publish/
             allow_empty_commit: false
             keep_files: false
             force_orphan: true
