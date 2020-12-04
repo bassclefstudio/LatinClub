@@ -1,46 +1,59 @@
 ﻿html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+    margin: 0;
+    overflow: hidden;
+}
+
+html, body, .full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
 }
 
 h1 {
     font-weight: 400;
-    font-size: x-large;
+    font-size: 48px;
 }
 
 h2 {
     font-weight: 300;
-    font-size: larger;
+    font-size: 36px;
 }
 
 h3 {
     font-weight: 300;
-    font-size: large;
+    font-size: 24px;
 }
 
 .flex-container {
     display: flex;
 }
 
-html, body, .full-height {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
+.flex-rows {
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-columns {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
 }
 
 .flex-center-h, .flex-center {
+    -webkit-justify-content: center;
     justify-content: center;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .flex-center-v, .flex-center {
+    -webkit-align-items: center;
     align-items: center;
-}
-
-.background-theme {
-    background-color: #222222;
-}
-
-.splash {
-    width: 25%;
-    height: 25%;
 }

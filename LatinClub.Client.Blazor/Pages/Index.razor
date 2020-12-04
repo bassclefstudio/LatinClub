@@ -2,7 +2,22 @@
 @using ViewModels
 @inject IBlazorViewProvider ViewProvider
 
-<h1>Hello, world!</h1>
+<div class="flex-container flex-columns full-width full-height background">
+    <div class="text-center panel accent">
+        <h1>RHS Latin Club</h1>
+    </div>
+    <div class="flex-container flex-rows flex-center full-width full-height" style="margin: 16px 0px;">
+        <div class="full-width full-height panel chrome acrylic">
+            <h2>Panel 1</h2>
+        </div>
+        <div class="dark full-width full-height panel chrome acrylic">
+            <h2>Panel 2</h2>
+        </div>
+    </div>
+    <div class="text-center panel accent">
+        <h2>Other info</h2>
+    </div>
+</div>
 
 @code
 {
