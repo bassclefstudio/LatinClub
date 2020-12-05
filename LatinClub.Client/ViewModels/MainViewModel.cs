@@ -10,6 +10,11 @@ namespace BassClefStudio.LatinClub.Client.ViewModels
 {
     public class MainViewModel : Observable, IViewModel, IActivationHandler
     {
+        /// <summary>
+        /// The current version of the app, as a human-readable <see cref="Version"/>.
+        /// </summary>
+        public Version AppVersion { get; } = typeof(MainViewModel).Assembly.GetName().Version;
+
         public bool Enabled { get; } = true;
 
         public void Activate(IActivatedEventArgs args)
