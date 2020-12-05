@@ -15,21 +15,16 @@ jobs:
           uses: actions/setup-dotnet@v1
           with:
             dotnet-version: 5.0.x
-
         - name: Add GitHub Packages to Nuget
           run: dotnet nuget add source https://nuget.pkg.github.com/bassclefstudio/index.json --name "GPR" --username bassclefstudio --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
         - name: Install dependencies
           run: dotnet restore LatinClub.Client.Blazor/LatinClub.Client.Blazor.csproj
         - name: Publish
           run: dotnet publish LatinClub.Client.Blazor/LatinClub.Client.Blazor.csproj --configuration Release --no-restore
-        - name: Add to GitHub Pages
-          uses: peaceiris/actions-gh-pages@v3.6.1
+        - name: Deploy 🚀
+          uses: JamesIves/github-pages-deploy-action@3.7.1
           with:
-            github_token: ${{ secrets.PUBLISH_TOKEN }}
-            publish_branch: gh-pages
-            publish_dir: LatinClub.Client.Blazor/bin/Release/net5.0/publish/
-            allow_empty_commit: false
-            keep_files: false
-            force_orphan: true
-            # Uncomment the following line if you have a custom domain name:
-            # cname: mywebsite.net
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages # The branch the action should deploy to.
+            FOLDER: LatinClub.Client.Blazor/LatinClub.Client.Blazor/bin/Release/net5.0/publish/ # The folder the action should deploy.
+            CLEAN: true # Automatically remove deleted files from the deploy branch
