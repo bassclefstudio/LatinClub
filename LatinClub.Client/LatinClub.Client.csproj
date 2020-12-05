@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>BassClefStudio.LatinClub.Client</RootNamespace>
+    <Authors>BassClefStudio</Authors>
   </PropertyGroup>
 
   <ItemGroup>

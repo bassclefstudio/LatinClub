@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <RootNamespace>BassClefStudio.LatinClub.Client.Blazor</RootNamespace>
+    <Authors>BassClefStudio</Authors>
   </PropertyGroup>
 
   <ItemGroup>

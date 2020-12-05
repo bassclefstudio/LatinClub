@@ -9,14 +9,6 @@
     background-color: rgb(34,34,34);
 }
 
-.panel {
-    -moz-border-radius: 16px;
-    -webkit-border-radius: 16px;
-    border-radius: 16px;
-    padding: 8px;
-    margin: 8px;
-}
-
 .accent {
     background-color: rgb(128,0,0);
 }
@@ -32,6 +24,30 @@
 }
 
 .splash {
-    width: 25%;
-    height: 25%;
+    width: 50%;
+    height: 50%;
 }
+
+/*CSS Scrollbar customization:*/
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(96, 96, 96);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(128, 128, 128);
+    }
