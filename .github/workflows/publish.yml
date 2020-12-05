@@ -21,10 +21,19 @@ jobs:
           run: dotnet restore LatinClub.Client.Blazor/LatinClub.Client.Blazor.csproj
         - name: Publish
           run: dotnet publish LatinClub.Client.Blazor/LatinClub.Client.Blazor.csproj --configuration Release --no-restore
+        # changes the base-tag in index.html from '/' to 'LatinClub' to match GitHub Pages repository subdirectory
+        - name: Change base-tag in index.html from / to LatinClub
+          run: sed -i 's/<base href="\/" \/>/<base href="\/LatinClub\/" \/>/g' LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot/index.html
+        # copy index.html to 404.html to serve the same file when a file is not found
+        - name: copy index.html to 404.html
+          run: cp LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot/index.html LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot/404.html
+        # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
+        - name: Add .nojekyll file
+          run: touch LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot/.nojekyll
         - name: Deploy 🚀
           uses: JamesIves/github-pages-deploy-action@3.7.1
           with:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             BRANCH: gh-pages # The branch the action should deploy to.
-            FOLDER: LatinClub.Client.Blazor/bin/Release/net5.0/publish # The folder the action should deploy.
+            FOLDER: LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot # The folder the action should deploy.
             CLEAN: true # Automatically remove deleted files from the deploy branch
