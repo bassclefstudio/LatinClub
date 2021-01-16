@@ -19,11 +19,13 @@ jobs:
           run: dotnet nuget add source https://nuget.pkg.github.com/bassclefstudio/index.json --name "GPR" --username bassclefstudio --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
         - name: Install dependencies
           run: dotnet restore LatinClub.Client.Blazor/LatinClub.Client.Blazor.csproj
+        # changes the base-tag in index.html and manifest.json from '/' to 'LatinClub' to match GitHub Pages repository subdirectory
+        - name: Change base-tag in index.html from / to LatinClub
+          run: |
+            sed -i 's/<base href="\/"\/>/<base href="\/LatinClub\/"\/>/g' LatinClub.Client.Blazor/wwwroot/index.html
+            sed -i 's/"start_url": ".\/"/"start_url": ".\/LatinClub\/"/g' LatinClub.Client.Blazor/wwwroot/manifest.json
         - name: Publish
           run: dotnet publish LatinClub.Client.Blazor/LatinClub.Client.Blazor.csproj --configuration Release --no-restore
-        # changes the base-tag in index.html from '/' to 'LatinClub' to match GitHub Pages repository subdirectory
-        - name: Change base-tag in index.html from / to LatinClub
-          run: sed -i 's/<base href="\/" \/>/<base href="\/LatinClub\/" \/>/g' LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot/index.html
         # copy index.html to 404.html to serve the same file when a file is not found
         - name: copy index.html to 404.html
           run: cp LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot/index.html LatinClub.Client.Blazor/bin/Release/net5.0/publish/wwwroot/404.html

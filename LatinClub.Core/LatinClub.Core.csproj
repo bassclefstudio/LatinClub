@@ -7,8 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="BassClefStudio.NET.Api" Version="1.0.1" />
-    <PackageReference Include="BassClefStudio.NET.Core" Version="1.4.0" />
-    <PackageReference Include="BassClefStudio.NET.Sync" Version="1.5.1" />
+    <PackageReference Include="BassClefStudio.NET.Core" Version="1.5.1" />
+    <PackageReference Include="BassClefStudio.NET.Sync" Version="1.5.2" />
     <PackageReference Include="System.Text.Json" Version="5.0.0" />
   </ItemGroup>
 

@@ -9,6 +9,6 @@ namespace BassClefStudio.LatinClub.Client.Blazor.Pages
 {
     public class MainBlazorView : BlazorView<MainViewModel>
     {
-        public override string ViewPath { get; } = "/";
+        public override string ViewPath { get; } = "";
     }
 }
