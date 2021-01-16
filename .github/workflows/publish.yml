@@ -23,6 +23,7 @@ jobs:
         - name: Change base-tag in index.html from / to LatinClub
           run: |
             sed -i 's/<base href="\/" \/>/<base href="\/LatinClub\/" \/>/g' LatinClub.Client.Blazor/wwwroot/index.html
+            sed -i 's/"start_url": ".\/"/"start_url": ".\/LatinClub\/"/g' LatinClub.Client.Blazor/wwwroot/manifest.json
         - name: Publish
           run: dotnet publish LatinClub.Client.Blazor/LatinClub.Client.Blazor.csproj --configuration Debug --no-restore
         # copy index.html to 404.html to serve the same file when a file is not found
