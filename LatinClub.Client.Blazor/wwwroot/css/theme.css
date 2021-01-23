@@ -5,6 +5,22 @@
     background-position: center;
 }
 
+.rounded-corners {
+    border-radius: 8px;
+}
+
+    .rounded-corners.accent {
+        border-color: rgb(128,0,0);
+    }
+
+    .rounded-corners.chrome {
+        border-color: rgb(68,68,68);
+    }
+
+    .rounded-corners.acrylic {
+        border-color: rgba(68,68,68,0.8);
+    }
+
 .background-color {
     background-color: rgb(34,34,34);
 }

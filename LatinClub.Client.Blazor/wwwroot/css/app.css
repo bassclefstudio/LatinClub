@@ -36,6 +36,10 @@ h3 {
     margin: 16px;
 }
 
+.padding {
+    padding: 16px;
+}
+
 /*Flex display classes:*/
 
 .flex-container {
@@ -55,8 +59,9 @@ h3 {
         flex-direction: column;
     }
 
-.scrollable .scrollable-mobile {
+.scrollable .scrollable.mobile {
     overflow: hidden auto;
+    height: 100vh;
 }
 
 .flex-vertical {
@@ -98,7 +103,7 @@ h3 {
         overflow: hidden;
     }
 
-    .scrollable-mobile {
+    .scrollable.mobile {
         overflow: hidden;
     }
 

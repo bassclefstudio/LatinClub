@@ -1,28 +1,26 @@
 ﻿@page "/"
 @using ViewModels
+@using System.Collections.Specialized
 @inject IBlazorViewProvider ViewProvider
-
-<div class="flex-container flex-vertical full-width full-height background">
-    <div class="flex-container flex-horizontal flex-center text-center accent full-width">
-        <h1>RHS Latin Club</h1>
-        <i> v@(ViewModel.AppVersion.ToString())</i>
-    </div>
-    <div class="flex-container flex-horizontal flex-center mobile full-width full-height">
-        <div class="full-width full-height chrome acrylic">
-            <div class="margin">        
-                <h2>Events:</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>    
-        </div>
-        <div class="dark full-width full-height chrome acrylic">
-            <div class="margin">      
-                <h2>Articles:</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="full-width full-height flex-container flex-vertical">
+    <div class="chrome acrylic"><h1>RHS Latin Club</h1></div>
+    <div class="scrollable" style="height: 100px">
+@foreach(var item in ViewModel.Events) 
+{
+        <div class="flex-container flex-center flex-horizontal mobile margin padding accent rounded-corners">
+            <div class="margin" style="flex-grow: 1">
+                 <h2>@item.Name</h2>
+            </div>
+            <div class="flex-container flex-center flex-vertical" style="flex-grow: 2">
+                <div class="margin">
+                    @item.StartTime.ToString("dd MMMM yyyy - HH:mm")
+                </div>
+                <div class="margin">
+                    @item.Description
+                </div>
             </div>
         </div>
-    </div>
-    <div class="text-center accent full-width">
-        <h2>Other info</h2>
+}
     </div>
 </div>
 
@@ -36,10 +34,13 @@
         if(ViewModel != null)
         {
             ViewModel.PropertyChanged += ViewModelChanged;
+            ViewModel.Events.CollectionChanged += ViewModelChanged;
         }
     }
 
-    private void ViewModelChanged(object sender, PropertyChangedEventArgs e)
+    private void ViewModelChanged(object sender, NotifyCollectionChangedEventArgs e) => ViewModelChanged();
+    private void ViewModelChanged(object sender, PropertyChangedEventArgs e) => ViewModelChanged();
+    private void ViewModelChanged()
     {
         StateHasChanged();
     }
