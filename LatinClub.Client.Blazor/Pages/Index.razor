@@ -1,11 +1,13 @@
 ﻿@page "/"
 @using ViewModels
-@using System.Collections.Specialized
+@using BassClefStudio.AppModel.Bindings
+@using System.Collections.ObjectModel
+@using LatinClub.Core.Events
 @inject IBlazorViewProvider ViewProvider
 <div class="full-width full-height flex-container flex-vertical">
-    <div class="chrome acrylic"><h1>RHS Latin Club</h1></div>
+    <div class="chrome acrylic padding"><h1>RHS Latin Club</h1></div>
     <div class="scrollable" style="height: 100px">
-@foreach(var item in ViewModel.Events) 
+@foreach(var item in EventBinding.CurrentValue) 
 {
         <div class="flex-container flex-center flex-horizontal mobile margin padding accent rounded-corners">
             <div class="margin" style="flex-grow: 1">
@@ -28,18 +30,19 @@
 {
     public MainViewModel ViewModel { get; set; }
 
+    internal IBinding<ObservableCollection<ClubEvent>> EventBinding;
+
     protected override void OnInitialized()
     {
         ViewModel = (ViewProvider.CurrentView as BlazorView<MainViewModel>)?.ViewModel;
+
         if(ViewModel != null)
         {
-            ViewModel.PropertyChanged += ViewModelChanged;
-            ViewModel.Events.CollectionChanged += ViewModelChanged;
+            EventBinding = ViewModel.MyBinding().Property(v => v.Events).AsCollection();
+            EventBinding.CurrentValueChanged += (s, e) => ViewModelChanged();
         }
     }
 
-    private void ViewModelChanged(object sender, NotifyCollectionChangedEventArgs e) => ViewModelChanged();
-    private void ViewModelChanged(object sender, PropertyChangedEventArgs e) => ViewModelChanged();
     private void ViewModelChanged()
     {
         StateHasChanged();
