@@ -1,11 +1,12 @@
 ﻿html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: scroll;
+    position: page;
     color: white;
     margin: 0;
-    overflow: hidden;
 }
 
-html, body, .full-height {
+.full-height {
     height: 100%;
 }
 
@@ -59,11 +60,6 @@ h3 {
         flex-direction: column;
     }
 
-.scrollable .scrollable.mobile {
-    overflow: hidden auto;
-    height: 100vh;
-}
-
 .flex-vertical {
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
@@ -100,11 +96,6 @@ h3 {
         -ms-flex-direction: row;
         -webkit-flex-direction: row;
         flex-direction: row;
-        overflow: hidden;
-    }
-
-    .scrollable.mobile {
-        overflow: hidden;
     }
 
     .flex-center-parallel.mobile, .flex-center.mobile {

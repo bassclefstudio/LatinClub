@@ -44,6 +44,15 @@
     height: 50%;
 }
 
+.center-align {
+    text-align: center;
+    vertical-align: central;
+}
+
+.left-align {
+    text-align: start;
+}
+
 /*CSS Scrollbar customization:*/
 /* width */
 ::-webkit-scrollbar {

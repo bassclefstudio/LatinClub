@@ -3,34 +3,70 @@
 @using BassClefStudio.AppModel.Bindings
 @using System.Collections.ObjectModel
 @using LatinClub.Core.Events
+@using LatinClub.Core.News
 @inject IBlazorViewProvider ViewProvider
-<div class="full-width full-height flex-container flex-vertical">
-    <div class="chrome acrylic padding"><h1>RHS Latin Club</h1></div>
-    <div class="scrollable" style="height: 100px">
-@foreach(var item in EventBinding.CurrentValue) 
-{
-        <div class="flex-container flex-center flex-horizontal mobile margin padding accent rounded-corners">
-            <div class="margin" style="flex-grow: 1">
-                 <h2>@item.Name</h2>
-            </div>
-            <div class="flex-container flex-center flex-vertical" style="flex-grow: 2">
-                <div class="margin">
-                    @item.StartTime.ToString("dd MMMM yyyy - HH:mm")
-                </div>
-                <div class="margin">
-                    @item.Description
-                </div>
-            </div>
-        </div>
-}
-    </div>
-</div>
+
+<Grid RowGap="16" ColumnGap="16">
+    <RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="3*"/>
+    </RowDefinitions>
+    <ColumnDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+    </ColumnDefinitions>
+    <Content>
+        <GridElement Row="1" ColumnSpan="2">
+            <div class="accent padding center-align flex-container flex-center"><h1>RHS Latin Club</h1></div>
+        </GridElement>
+        <GridElement Row="2" Column="1" ColumnSpan="@(ShowWide ? 1 : 2)">
+            @foreach(var e in EventBinding.CurrentValue?.Take(3) ?? new ClubEvent[0])
+            {
+               <div class="margin rounded-corners center-align chrome padding flex-vertical flex-container flex-center">
+                    <h1>@e.Name</h1>
+                    <p>@e.Description</p>
+               </div>     
+            }
+
+            @if(!ShowWide)
+            {
+                @foreach(var e in ArticleBinding.CurrentValue?.Take(3) ?? new Article[0])
+                {
+                   <div class="margin rounded-corners center-align chrome padding flex-vertical flex-container flex-center">
+                        <h1>@e.Title</h1>
+                        <Markdown Content="@e.Content"/>
+                   </div>     
+                }
+            }
+        </GridElement>
+        @if(ShowWide)
+        {
+            <GridElement Row="2" Column="2">
+                @foreach(var e in ArticleBinding.CurrentValue?.Take(3) ?? new Article[0])
+                    {
+                       <div class="margin rounded-corners center-align chrome padding flex-vertical flex-container flex-center">
+                            <h1>@e.Title</h1>
+                            <Markdown Content="@e.Content"/>
+                       </div>     
+                    }
+            </GridElement>        
+        }
+    </Content>
+</Grid>
+
+<MediaQuery Media="@Breakpoints.MediumUp" @bind-Matches="ShowWide" />
 
 @code
 {
     public MainViewModel ViewModel { get; set; }
 
+    bool ShowWide = false;
+
     internal IBinding<ObservableCollection<ClubEvent>> EventBinding;
+
+    internal IBinding<ObservableCollection<Article>> ArticleBinding;
+
 
     protected override void OnInitialized()
     {
@@ -40,6 +76,8 @@
         {
             EventBinding = ViewModel.MyBinding().Property(v => v.Events).AsCollection();
             EventBinding.CurrentValueChanged += (s, e) => ViewModelChanged();
+            ArticleBinding = ViewModel.MyBinding().Property(v => v.Articles).AsCollection();
+            ArticleBinding.CurrentValueChanged += (s, e) => ViewModelChanged();
         }
     }
 

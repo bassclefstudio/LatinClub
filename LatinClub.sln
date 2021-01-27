@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Api", "LatinClub.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Core", "LatinClub.Core\LatinClub.Core.csproj", "{AE624AD6-8253-4179-AEA3-FF6B3D063968}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatinClub.Client", "LatinClub.Client\LatinClub.Client.csproj", "{07011CE2-D23B-4FFE-BCC9-91B02D6B7452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Client", "LatinClub.Client\LatinClub.Client.csproj", "{07011CE2-D23B-4FFE-BCC9-91B02D6B7452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatinClub.Client.Blazor", "LatinClub.Client.Blazor\LatinClub.Client.Blazor.csproj", "{5D154C9F-65E9-48AB-8D84-BDE4B40DA23F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LatinClub.Client.Blazor", "LatinClub.Client.Blazor\LatinClub.Client.Blazor.csproj", "{5D154C9F-65E9-48AB-8D84-BDE4B40DA23F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
