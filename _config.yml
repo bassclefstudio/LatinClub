@@ -10,27 +10,27 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "minimal-mistakes-jekyll"
+# theme                : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark"
+minimal_mistakes_skin  : "air"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "bassclefstudio"
+title                    : "RHS Latin Club"
 title_separator          : "|"
-subtitle                 : "Life, the Universe, and Everything"
-name                     : "bassclefstudio"
-description              : "Life, the Universe, and Everything"
+subtitle                 : "news, calendar, information"
+name                     : "RHS Latin Club"
+description              : "News, calendar, and information for the RHS Latin Club."
 url                      : "https://bassclefstudio.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "bassclefstudio/bassclefstudio.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+baseurl                  : "/LatinClub" # the subpath of your site, e.g. "/blog"
+repository               : "bassclefstudio/LatinClub" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/icon.svg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 atom_feed:
-  path                   : /feed/blog.xml # blank (default) uses feed.xml
+  path                   : /feed/news.xml # blank (default) uses feed.xml
   hide                   : # true, false (default)
 search                   : # true, false (default)
 search_full_content      : # true, false (default)
@@ -39,8 +39,7 @@ search_provider          : # lunr (default), algolia, google
 # Atom Feed
 feed:
   collections:
-    - blog
-    - forum
+    - news
 
 # SEO Related
 google_site_verification :
@@ -75,25 +74,18 @@ analytics:
 author:
   name             : "Decklan Spencer"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Student, self-taught .NET developer, and avid euphonium player."
-  location         : "United States"
+  bio              : "Latin Club co-consul, 2020-21"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:bassclefstudio-dev@outlook.com"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/bassclefstudio"
+      url: "mailto:03dspencer@ridgewood.k12.nj.us"
 
 # Site Footer
 footer:
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:bassclefstudio-dev@outlook.com"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/bassclefstudio"
+    - label: "Google Classroom"
+      icon: "fas fa-fw fa-users"
+      url: "https://classroom.google.com/c/MTgwNTgyNjI4MDIz"
 
 # Reading Files
 include:
@@ -220,13 +212,7 @@ compress_html:
     envs: development
 
 collections:
-  projects:
-    output: true
-    permalink: /:collection/:title/
-  blog:
-    output: true
-    permalink: /:collection/:title/
-  forum:
+  news:
     output: true
     permalink: /:collection/:title/
 
@@ -235,31 +221,7 @@ defaults:
   # _blog
   - scope:
       path: ""
-      type: blog
-    values:
-      layout: single
-      author_profile: true
-      show_date: true
-      read_time: true
-      comments: # true
-      share: true
-      related: false
-  # _projects
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-      author_profile: true
-      show_date: true
-      read_time: true
-      comments: # true
-      share: true
-      related: false
-  # _forum
-  - scope:
-      path: ""
-      type: forum
+      type: news
     values:
       layout: single
       author_profile: true

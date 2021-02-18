@@ -3,11 +3,10 @@
 ---
 @charset "utf-8";
 
-$background-color: #28283c;
-$body-color: #c8c8ff;
-$link-color: #c8c8ff;
-$primary-color: #c8c8ff;
-$masthead-link-color: #c8c8ff;
+$background-color: #ffe2e2;
+$link-color: #450000;
+$primary-color: #9a0000;
+$masthead-link-color: #450000;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials

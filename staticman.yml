@@ -2,10 +2,10 @@
 # different config blocks for different sections of your site.
 # For example, you can have one property to handle comment submission and
 # another one to handle posts.
-forum:
+news:
   allowedFields: ["author", "email", "title", "excerpt", "content"]
   branch: "main"
-  commitMessage: "Forum post: \"{fields.title}\" by {fields.author}"
+  commitMessage: "News article: \"{fields.title}\" by {fields.author}"
   filename: "{@timestamp}"
 
   format: "frontmatter"
@@ -22,9 +22,9 @@ forum:
         format: "iso8601"
         
   moderation: true
-  name: "bassclefstudio.github.io"
+  name: "LatinClub"
 
-  path: "_forum"
+  path: "_news"
 
   requiredFields: ["author", "title", "content"]
   
