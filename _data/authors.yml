@@ -1,0 +1,12 @@
+Decklan Spencer:
+  name             : "Decklan Spencer"
+  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Student, self-taught .NET developer, and avid euphonium player."
+  location         : "United States"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:bassclefstudio-dev@outlook.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/bassclefstudio"

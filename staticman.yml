@@ -1,0 +1,30 @@
+# Name of the property. You can have multiple properties with completely
+# different config blocks for different sections of your site.
+# For example, you can have one property to handle comment submission and
+# another one to handle posts.
+forum:
+  allowedFields: ["author", "email", "title", "excerpt", "content"]
+  branch: "main"
+  commitMessage: "Forum post: \"{fields.title}\" by {fields.author}"
+  filename: "{@timestamp}"
+
+  format: "frontmatter"
+  extension: "md"
+  # List of transformations to apply to any of the fields supplied. Keys are
+  # the name of the field and values are possible transformation types.
+  transforms:
+    content: "frontmatterContent"
+
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "iso8601"
+        
+  moderation: true
+  name: "bassclefstudio.github.io"
+
+  path: "_forum"
+
+  requiredFields: ["author", "title", "content"]
+  
