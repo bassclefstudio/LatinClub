@@ -1,6 +1,6 @@
 ---
 title:  "Hello World!"
-excerpt: "Testing Jekyll for Latin Club..."
+excerpt: "Testing Jekyll for GitHub Pages..."
 date: "2021-02-18T11:29-05"
 ---
 Just a simple post to see if Jekyll is working!
