@@ -1,3 +1,4 @@
 # LatinClub
-A cross-platform .NET app for Latin Club. Built primarily for UWP and WASM with other possible platform targets.
-Find the current release of the website: https://bassclefstudio.github.io/LatinClub
+A Jekyll website built for managing the RHS Latin Club, with a user-generated news feed (managed via PR on GitHub), calendar, and general information.
+
+Visit [the website](https://bassclefstudio.github.io/LatinClub) to find out more.
