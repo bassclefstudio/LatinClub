@@ -1,0 +1,8 @@
+Decklan Spencer:
+  name             : "Decklan Spencer"
+  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Latin Club co-consul, 2020-21"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:03dspencer@ridgewood.k12.nj.us"

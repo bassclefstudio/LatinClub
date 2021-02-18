@@ -1,0 +1,89 @@
+---
+permalink: "/news/new"
+layout: single
+classes:
+  - wide
+author_profile: true
+title: "Compose a Post"
+excerpt: "Submitting a post's information here will create a linked PR on this site's GitHub repository."
+header:
+    overlay_color: "#9a0000"
+    actions:
+      - label: "View PRs"
+        url: "https://github.com/bassclefstudio/LatinClub/pulls"
+---
+<style>
+
+  .col-sm {
+    float: left;
+    width: 35%;
+    margin-top: 6px;
+  }
+  
+  .col-lg {
+    float: left;
+    width: 65%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-sm, .col-lg, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+</style>
+
+<form method="POST" action="https://bassclefstudio-forum.herokuapp.com/v3/entry/github/bassclefstudio/LatinClub/main/news">
+    <input name="options[redirect]" type="hidden" value="{{ site.url }}">
+    <!-- e.g. "2016-01-02-this-is-a-post" -->
+    <div class="row">
+        <div class="col-sm">
+          <label for="fname">Your Name:</label>
+        </div>
+        <div class="col-lg">
+            <input name="fields[author]" type="text" placeholder="Jane Doe">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <label for="fname">E-mail (public, optional):</label>
+      </div>
+      <div class="col-lg">
+          <input name="fields[email]" type="text" placeholder="me@mywebsite.com">
+      </div>
+  </div>
+    <div class="row">
+        <div class="col-sm">
+          <label for="fname">Post Title:</label>
+        </div>
+        <div class="col-lg">
+            <input name="fields[title]" type="text" placeholder="My New Post">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+          <label for="fname">Excerpt (optional):</label>
+        </div>
+        <div class="col-lg">
+            <input name="fields[excerpt]" type="text" placeholder="It's really great!">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+          <label for="fname">Content:</label>
+        </div>
+        <div class="col-lg">
+            <textarea name="fields[content]" placeholder="Write some Markdown here..."></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn--primary btn--large">Submit</button>
+</form>
