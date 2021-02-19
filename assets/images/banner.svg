@@ -31,7 +31,7 @@
     </filter>
   </defs>
   <rect width="3072" height="2048" style="fill: rgb(128, 0, 0);"/>
-  <g style="filter: url(#drop-shadow-filter-1);" transform="matrix(5.661404, 0, 0, 6.971271, -5147.797363, -5746.274414)">
+  <g style="filter: url(#drop-shadow-filter-1);" transform="matrix(2.83068, 0, 0, 3.485609, -1037.876465, -2361.107422)">
     <g transform="matrix(1.01291, 0, 0, 1.003806, 973.748718, 825.70343)" id="g9160">
       <g transform="matrix(-0.02924531,-0.33931436,-0.40477853,0.02411364,491.04647,575.29282)" style="display:inline;fill:#ecc935;fill-opacity:1;stroke:#d3b013;stroke-width:1.00712;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="g6401-5-0-5-7-9-2-0-17">
         <g id="g11564-3-1-2-9-4-9-8-7-4" style="display:inline;fill:#ecc935;fill-opacity:1;stroke:#d3b013;stroke-width:2.77367;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="matrix(1.0668519,0,0,1.0757051,3262.0161,-518.48597)">
@@ -431,5 +431,5 @@
       </g>
     </g>
   </g>
-  <text style="fill: rgb(255, 255, 255); font-family: Adamina; font-size: 910.1px; stroke: rgb(0, 0, 0); stroke-width: 2px; white-space: pre; filter: url(#drop-shadow-filter-0);" x="514.111" y="1360.07">RHS</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Adamina; font-size: 455px; stroke: rgb(0, 0, 0); stroke-width: 2px; white-space: pre; filter: url(#drop-shadow-filter-0);" x="1793.057" y="1192.038">RHS</text>
 </svg>
