@@ -1,0 +1,40 @@
+---
+title: "Articles by Tag"
+excerpt: "Browse all news articles by their tags."
+layout: archive
+entries_layout: list
+permalink: /tags/
+classes:
+  - wide
+author_profile: true
+header:
+    overlay_color: "#9a0000"
+---
+
+{% assign alldocs = site.news %} 
+{% assign grouptag =  alldocs | map: 'tags' | join: ','  | split: ','  | group_by: tag %}
+
+<ul class="taxonomy__index">
+ {% assign orderedtags = grouptag | sort: "size", "last" %}
+ {% for tag in orderedtags %}
+    <li>
+      <a href="#{{ tag.name | slugify }}">
+        <strong>{{ tag.name }}</strong> <span class="taxonomy__count">{{ tag.size }}</span>
+      </a>
+    </li>
+ {% endfor %}
+</ul>
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+{%- for tag in grouptag -%}
+<section id="{{ tag.name | slugify | downcase }}" class="taxonomy__section">
+  <h2 class="archive__subtitle">{{ tag.name | slugify | downcase }}</h2>
+  <div class="entries-{{ entries_layout }}">
+    {% assign tagdocs = alldocs | where_exp:"item", "item.tags contains tag.name" %}
+    {% for post in tagdocs %}
+      {% include archive-single.html type=entries_layout %}
+    {% endfor %}
+  </div>
+  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+</section>
+{%- endfor -%}
